@@ -64,6 +64,23 @@ function cnNumber(s: string): number | null {
   return n;
 }
 
+// 給其他 skill 共用：從一句話找出客戶、成品（最長命中；同長度多個 → 有歧義）
+export function customerTable(model: SkillContext['model']) {
+  return model.raw.customers.filter((c) => c.channel_id !== 'TOUR').flatMap((c) => {
+    let short = c.name;
+    for (const s of CUST_SUFFIX) short = short.replace(s, '');
+    const en = c.name.match(/^[A-Za-z]+/)?.[0];
+    return [{ id: c.customer_id, alias: c.name }, { id: c.customer_id, alias: short.length >= 2 ? short : '' }, ...(en ? [{ id: c.customer_id, alias: en }] : [])];
+  });
+}
+export function itemTable(model: SkillContext['model']) {
+  return model.raw.items.filter((i) => i.type === '成品').flatMap((i) => [
+    { id: i.item_id, alias: i.name }, { id: i.item_id, alias: i.name.replace(/[（(].*$/, '') },
+    ...(ITEM_ALIAS[i.item_id] ?? []).map((a) => ({ id: i.item_id, alias: a })),
+  ]);
+}
+export const matchIn = (text: string, table: { id: string; alias: string }[]) => bestMatch(text, table);
+
 export function parseInsert(raw: string, ctx: SkillContext, prevDue?: string): Parsed {
   const { om, model } = ctx;
   const asOf = om.asOf;

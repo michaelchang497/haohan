@@ -7,6 +7,7 @@ import Customers from './pages/Customers';
 import Products from './pages/Products';
 import Materials from './pages/Materials';
 import Scenarios from './pages/Scenarios';
+import ProfitChat from './pages/ProfitChat';
 import Capacity from './pages/Capacity';
 import RoleFocus from './components/RoleFocus';
 
@@ -48,6 +49,17 @@ function Sidebar() {
 function FilterBar() {
   const { model, filters, setFilters, periodKey, setPeriodKey, period, route, order } = useApp();
   const meta = model.raw.meta;
+  if (route.page === 'analysis') {
+    return (
+      <div className="filters">
+        <span className="filters-title">損益分析</span>
+        <span className="range">期間、公司、通路在對話中指定；預設本月、全集團（沖銷內部交易）</span>
+        <div className="status" title={meta.source}>
+          資料至 {meta.data_through.slice(5).replace('-', '/')} ・ ≤{Number(meta.last_closed_month.slice(5))}月 月結成本 ・ 本月 預估成本
+        </div>
+      </div>
+    );
+  }
   if (PAGES.find((p) => p.id === route.page)?.group === 'order') {
     return (
       <div className="filters">
@@ -97,6 +109,7 @@ function Page() {
       case 'products': return <Products />;
       case 'materials': return <Materials />;
       case 'scenarios': return <Scenarios />;
+      case 'analysis': return <ProfitChat />;
       case 'capacity': return <Capacity />;
       default: return <Overview />;
     }

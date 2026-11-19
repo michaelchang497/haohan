@@ -6,7 +6,7 @@ import { buildAlerts, type Alert } from '../lib/alerts';
 import { loadOrderData } from '../order/types';
 import { buildOrderModel, type OrderModel } from '../order/engine';
 
-export type PageId = 'overview' | 'customers' | 'products' | 'materials' | 'scenarios' | 'capacity';
+export type PageId = 'overview' | 'customers' | 'products' | 'materials' | 'analysis' | 'scenarios' | 'capacity';
 
 export const PAGE_GROUPS = [
   { id: 'pnl', name: '損益戰情' },
@@ -18,14 +18,15 @@ export const PAGES: { id: PageId; name: string; desc: string; group: 'pnl' | 'or
   { id: 'customers', name: '客戶損益', desc: '客戶貢獻與報價檢查', group: 'pnl' },
   { id: 'products', name: '產品損益', desc: '產品毛利與成本結構', group: 'pnl' },
   { id: 'materials', name: '原料成本', desc: '原料價格與影響模擬', group: 'pnl' },
+  { id: 'analysis', name: '損益分析', desc: '對話追問：原因、調價試算', group: 'pnl' },
   { id: 'capacity', name: '供需總覽', desc: '產線負荷、物料供需現況', group: 'order' },
   { id: 'scenarios', name: '決策支援', desc: '插單、排程人力、採購、旺季備貨', group: 'order' },
 ];
 
 // 角色只決定「預設首頁」與「常用頁面」標示；正式權限之後再設計
 export const ROLES: { id: string; name: string; home: PageId; pages: PageId[] }[] = [
-  { id: 'boss', name: '老闆／總經理', home: 'overview', pages: ['overview', 'customers', 'products'] },
-  { id: 'finance', name: '財務', home: 'overview', pages: ['overview', 'products'] },
+  { id: 'boss', name: '老闆／總經理', home: 'overview', pages: ['overview', 'customers', 'products', 'analysis'] },
+  { id: 'finance', name: '財務', home: 'overview', pages: ['overview', 'products', 'analysis'] },
   { id: 'sales', name: '業務（林志明）', home: 'customers', pages: ['customers', 'products', 'scenarios'] },
   { id: 'purchase', name: '採購', home: 'materials', pages: ['materials', 'capacity', 'scenarios'] },
   { id: 'production', name: '生管', home: 'products', pages: ['products', 'materials', 'scenarios', 'capacity'] },

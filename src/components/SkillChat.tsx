@@ -2,7 +2,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ComponentType } from 'react';
 import { useApp } from '../context/AppContext';
 import { Modal } from './ui';
-import { detectSkill, SKILLS } from '../skills/router';
+import { detectSkill, pathOf, SKILLS } from '../skills/router';
 import type { ChatReply, ChatSkill, SkillContext } from '../skills/types';
 
 type Msg<R> = { id: number; role: 'user'; text: string } | ({ id: number; role: 'assistant' } & ChatReply<R>);
@@ -13,8 +13,8 @@ const CACHE = new Map<string, { sessions: unknown[]; curId: number; seq: number 
 
 export default function SkillChat<S, R>({ skill, Card, seeds = [] }: {
   skill: ChatSkill<S, R>;
-  Card: ComponentType<{ r: R }>;
-  seeds?: { text: string; at: string }[];
+  Card: ComponentType<{ r: R; rerun?: () => void }>;
+  seeds?: { text: string; at: string; patch?: (r: R) => R }[];   // patch：demo 用，例如把結果改成舊資料
 }) {
   const { order, model, route, navigate } = useApp();
   const ctx: SkillContext = useMemo(() => ({ om: order!, model }), [order, model]);
@@ -22,15 +22,16 @@ export default function SkillChat<S, R>({ skill, Card, seeds = [] }: {
   const cached = CACHE.get(skill.def.id);
   const seq = useRef(cached?.seq ?? 1);
 
-  const greeting = (): Msg<R> => ({ id: seq.current++, role: 'assistant', trace: [], text: [skill.greeting], chips: examples });
+  const greeting = (): Msg<R> => ({ id: seq.current++, role: 'assistant', trace: [], text: typeof skill.greeting === 'string' ? [skill.greeting] : skill.greeting(ctx), chips: examples });
   const titleOf = (st: S, first?: string) => skill.title(st, ctx) ?? (first ? first.slice(0, 16) : '新對話');
   const fresh = (): Session<S, R> => ({ id: seq.current++, title: '新對話', msgs: [greeting()], state: skill.empty(), at: '剛剛' });
 
   const [sessions, setSessions] = useState<Session<S, R>[]>(() => {
     if (cached) return cached.sessions as Session<S, R>[];
     // demo：先放幾段過去的對話（真的跑過計算），示意對話紀錄
-    const past = seeds.map(({ text, at }) => {
+    const past = seeds.map(({ text, at, patch }) => {
       const r = skill.run(text, skill.empty(), ctx);
+      if (patch && r.reply.result !== undefined) r.reply.result = patch(r.reply.result);
       return { id: seq.current++, at, state: r.state, title: titleOf(r.state, text),
         msgs: [greeting(), { id: seq.current++, role: 'user', text }, { id: seq.current++, role: 'assistant', ...r.reply, chips: undefined }] } as Session<S, R>;
     });
@@ -106,11 +107,17 @@ export default function SkillChat<S, R>({ skill, Card, seeds = [] }: {
     const q = route.params.get('q');
     if (!q || handledQ.current) return;
     handledQ.current = true;
-    navigate(`#/scenarios?tab=${skill.def.id}`);
+    navigate(pathOf(skill.def.id));
     const s = newChat();
     if (s) window.setTimeout(() => send(q, s), 50);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // 結果卡的「重新計算」：用產生這個結果的那句話，在目前對話再問一次
+  const rerunFor = (id: number) => {
+    const i = msgs.findIndex((x) => x.id === id);
+    const q = [...msgs.slice(0, i)].reverse().find((x) => x.role === 'user');
+    return q && q.role === 'user' ? () => send(q.text) : undefined;
+  };
   const clearSlots = () => patch(cur.id, (x) => ({ ...x, state: skill.clear(x.state) }));
   const pills = skill.pills(cur.state, ctx);
   const msgs = cur.msgs;
@@ -162,11 +169,11 @@ export default function SkillChat<S, R>({ skill, Card, seeds = [] }: {
                       <ol>{m.trace.map((t, i) => <li key={i}>{t}</li>)}</ol>
                     </details>
                   )}
-                  {m.result !== undefined && <Card r={m.result} />}
+                  {m.result !== undefined && <Card r={m.result} rerun={rerunFor(m.id)} />}
                   {m.text.map((p, i) => p.startsWith('・') ? <p key={i} className="li">{p.slice(1)}</p> : <p key={i}>{p}</p>)}
                   {m.switchTo && (
                     <div className="chips">
-                      <button className="chip chip-go" onClick={() => navigate(`#/scenarios?tab=${m.switchTo!.skill}&q=${encodeURIComponent(m.switchTo!.text)}`)}>到「{m.switchTo.name}」問這句 →</button>
+                      <button className="chip chip-go" onClick={() => { const b = pathOf(m.switchTo!.skill); navigate(`${b}${b.includes('?') ? '&' : '?'}q=${encodeURIComponent(m.switchTo!.text)}`); }}>到「{m.switchTo.name}」問這句 →</button>
                     </div>
                   )}
                   {m.chips && m.id === msgs[msgs.length - 1].id && !busy && (

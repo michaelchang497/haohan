@@ -26,7 +26,7 @@ export interface SkillDef {
 // 一個可以對話的 skill：只有邏輯，不含畫面
 export interface ChatSkill<S, R> {
   def: SkillDef;
-  greeting: string;
+  greeting: string | ((ctx: SkillContext) => string[]);   // 可以依目前資料主動給重點
   placeholder: string;
   method: { steps: string[]; params: string; output: string };
   examples: (ctx: SkillContext) => string[];
