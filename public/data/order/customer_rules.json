@@ -1,0 +1,135 @@
+[
+  {
+    "customer_id": "C01",
+    "acceptance_ratio": 0.5,
+    "priority": "A",
+    "can_delay": false,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C02",
+    "acceptance_ratio": 0.5,
+    "priority": "A",
+    "can_delay": false,
+    "late_penalty": "延遲需賠償缺貨損失"
+  },
+  {
+    "customer_id": "C03",
+    "acceptance_ratio": 0.5,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C04",
+    "acceptance_ratio": 0.5,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C05",
+    "acceptance_ratio": 0.33,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C06",
+    "acceptance_ratio": 0.33,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C07",
+    "acceptance_ratio": 0.33,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C08",
+    "acceptance_ratio": 0.33,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C09",
+    "acceptance_ratio": 0.67,
+    "priority": "A",
+    "can_delay": false,
+    "late_penalty": "延遲每日扣貨款 1%"
+  },
+  {
+    "customer_id": "C10",
+    "acceptance_ratio": 0.67,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C11",
+    "acceptance_ratio": 0.67,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C12",
+    "acceptance_ratio": 0.5,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C13",
+    "acceptance_ratio": 0.5,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C14",
+    "acceptance_ratio": 0.5,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C15",
+    "acceptance_ratio": 0.5,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C16",
+    "acceptance_ratio": 0.33,
+    "priority": "B",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C17",
+    "acceptance_ratio": 0.33,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C18",
+    "acceptance_ratio": 0.67,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  },
+  {
+    "customer_id": "C19",
+    "acceptance_ratio": 0.67,
+    "priority": "C",
+    "can_delay": true,
+    "late_penalty": null
+  }
+]

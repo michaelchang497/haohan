@@ -1,0 +1,68 @@
+[
+  {
+    "line_id": "LA",
+    "name": "自動包餡 A 線",
+    "company_id": "HH",
+    "line_type": "自動",
+    "normal_hours": 8,
+    "max_overtime_weekday": 3,
+    "max_overtime_saturday": 8,
+    "std_headcount": 4,
+    "note": "常溫麻糬主力線"
+  },
+  {
+    "line_id": "LB",
+    "name": "自動包餡 B 線",
+    "company_id": "HH",
+    "line_type": "自動",
+    "normal_hours": 8,
+    "max_overtime_weekday": 3,
+    "max_overtime_saturday": 8,
+    "std_headcount": 4,
+    "note": "精裝盒、冷凍大福"
+  },
+  {
+    "line_id": "LH",
+    "name": "手工線",
+    "company_id": "HH",
+    "line_type": "手工",
+    "normal_hours": 8,
+    "max_overtime_weekday": 2,
+    "max_overtime_saturday": 8,
+    "std_headcount": 12,
+    "note": "產能取決於當天出勤人數"
+  },
+  {
+    "line_id": "LP",
+    "name": "餅皮內餡線",
+    "company_id": "HH",
+    "line_type": "自動",
+    "normal_hours": 8,
+    "max_overtime_weekday": 3,
+    "max_overtime_saturday": 8,
+    "std_headcount": 3,
+    "note": "雪莓娘皮、3Q 餅內餡（kg）"
+  },
+  {
+    "line_id": "LJ",
+    "name": "果凍線",
+    "company_id": "HH",
+    "line_type": "自動",
+    "normal_hours": 8,
+    "max_overtime_weekday": 3,
+    "max_overtime_saturday": 8,
+    "std_headcount": 3,
+    "note": ""
+  },
+  {
+    "line_id": "LY",
+    "name": "米菓線",
+    "company_id": "YW",
+    "line_type": "自動",
+    "normal_hours": 8,
+    "max_overtime_weekday": 2,
+    "max_overtime_saturday": 8,
+    "std_headcount": 4,
+    "note": "觀光工廠內"
+  }
+]

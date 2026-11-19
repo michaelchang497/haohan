@@ -1,0 +1,114 @@
+[
+  {
+    "file": "items.json（主檔）",
+    "code": "D01",
+    "name": "品號主檔（含前置天數、安全存量、效期、過敏原）",
+    "source_type": "ERP",
+    "erp_ref": "INVMB"
+  },
+  {
+    "file": "bom.json（主檔）",
+    "code": "D02",
+    "name": "BOM／配方",
+    "source_type": "ERP",
+    "erp_ref": "BOMMC／BOMMD"
+  },
+  {
+    "file": "order/inventory.json",
+    "code": "D03",
+    "name": "目前庫存（含批號、效期）",
+    "source_type": "ERP",
+    "erp_ref": "INVMC／INVMF"
+  },
+  {
+    "file": "order/sales_orders.json",
+    "code": "D04",
+    "name": "未出貨訂單",
+    "source_type": "ERP",
+    "erp_ref": "COPTC／COPTD"
+  },
+  {
+    "file": "order/purchase_orders.json",
+    "code": "D05",
+    "name": "未到貨採購單",
+    "source_type": "ERP",
+    "erp_ref": "PURTC／PURTD"
+  },
+  {
+    "file": "order/work_orders.json",
+    "code": "D06",
+    "name": "已開製令",
+    "source_type": "ERP",
+    "erp_ref": "MOCTA／MOCTB"
+  },
+  {
+    "file": "items.json 的 purchase_lead_days、moq（PK10）",
+    "code": "D07",
+    "name": "客製包材交期",
+    "source_type": "採購 Excel",
+    "erp_ref": null
+  },
+  {
+    "file": "order/production_lines.json、order/line_capabilities.json",
+    "code": "D08",
+    "name": "產線清單與產品 × 產線速度",
+    "source_type": "新建",
+    "erp_ref": null
+  },
+  {
+    "file": "order/calendar.json、order/maintenance.json",
+    "code": "D09",
+    "name": "每日可用工時與班別",
+    "source_type": "新建",
+    "erp_ref": null
+  },
+  {
+    "file": "order/changeover_rules.json",
+    "code": "D10",
+    "name": "換線時間與排序規則",
+    "source_type": "新建",
+    "erp_ref": null
+  },
+  {
+    "file": "order/production_schedule.json",
+    "code": "D11",
+    "name": "目前生產排程",
+    "source_type": "生管 Excel",
+    "erp_ref": null
+  },
+  {
+    "file": "order/staff_attendance.json",
+    "code": "D12",
+    "name": "人員出勤",
+    "source_type": "出勤系統",
+    "erp_ref": null
+  },
+  {
+    "file": "order/overtime_policy.json",
+    "code": "D13",
+    "name": "加班成本與上限",
+    "source_type": "財務／HR",
+    "erp_ref": null
+  },
+  {
+    "file": "order/freezer.json",
+    "code": "D14",
+    "name": "冷凍庫容量與占用",
+    "source_type": "新建",
+    "erp_ref": null
+  },
+  {
+    "file": "order/customer_rules.json",
+    "code": "D15、D16",
+    "name": "客戶允收期、優先順序",
+    "source_type": "新建",
+    "erp_ref": null
+  },
+  {
+    "file": "order/planning_rules.json",
+    "code": "R01～R10",
+    "name": "計畫規則",
+    "source_type": "新建",
+    "erp_ref": null
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "weekday_rate_per_person_hour": 300,
+  "saturday_rate_per_person_hour": 330,
+  "monthly_cap_per_person_hours": 46,
+  "note": "費率為模擬值；實際依薪資結構與勞基法加班費計算"
+}

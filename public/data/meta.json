@@ -1,0 +1,21 @@
+{
+  "source": "模擬資料（mock）— 格式模擬ERP 匯出後轉成的標準中介格式",
+  "as_of": "2026-11-18",
+  "data_through": "2026-11-17",
+  "last_closed_month": "2026-10",
+  "currency": "TWD",
+  "generated_at": "2026-11-18T07:40:55.539Z",
+  "row_counts": {
+    "companies": 2,
+    "channels": 6,
+    "sales_reps": 4,
+    "suppliers": 6,
+    "items": 53,
+    "bom": 110,
+    "price_contracts": 21,
+    "sales": 4468,
+    "purchases": 1295,
+    "monthly_actual_cost": 528,
+    "customers": 19
+  }
+}

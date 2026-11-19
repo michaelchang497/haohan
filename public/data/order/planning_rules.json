@@ -1,0 +1,76 @@
+[
+  {
+    "rule_id": "R01",
+    "name": "客戶允收期",
+    "value": "依 customer_rules.acceptance_ratio",
+    "note": "到貨時剩餘效期 ÷ 總效期 ≥ 允收比例"
+  },
+  {
+    "rule_id": "R02",
+    "name": "安全庫存可否動用",
+    "value": false,
+    "note": "預設不動用；動用時標示為注意"
+  },
+  {
+    "rule_id": "R03",
+    "name": "過敏原排最後",
+    "value": true,
+    "note": "見 changeover_rules"
+  },
+  {
+    "rule_id": "R04",
+    "name": "換線清洗時間",
+    "value": {
+      "default_minutes": 20,
+      "allergen_minutes": 45
+    }
+  },
+  {
+    "rule_id": "R05",
+    "name": "加班上限",
+    "value": {
+      "weekday_hours": "依產線",
+      "saturday_hours": 8,
+      "monthly_per_person": 46
+    }
+  },
+  {
+    "rule_id": "R06",
+    "name": "不可延遲的客戶",
+    "value": "customer_rules.priority = A"
+  },
+  {
+    "rule_id": "R07",
+    "name": "最小生產批量",
+    "value": "依 line_capabilities.min_batch"
+  },
+  {
+    "rule_id": "R08",
+    "name": "冷凍庫安全水位",
+    "value": 0.9
+  },
+  {
+    "rule_id": "R09",
+    "name": "出貨前置天數",
+    "value": {
+      "常溫": 1,
+      "冷凍": 2
+    },
+    "note": "生產完成到可出貨：包裝、金檢、急凍"
+  },
+  {
+    "rule_id": "R10",
+    "name": "餡料、餅皮提前製作",
+    "value": 1,
+    "note": "半成品需提前 1 個工作天備妥（原料於前一天領用）"
+  },
+  {
+    "rule_id": "R11",
+    "name": "最多提前生產天數",
+    "value": {
+      "常溫": 8,
+      "冷凍": 15
+    },
+    "note": "以工作天計，避免囤貨與效期耗損"
+  }
+]

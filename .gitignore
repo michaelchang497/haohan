@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+*.log
+*.tsbuildinfo
+# 只推 demo 站本身：文件、資料確認清單、資料產生腳本留在本機
+docs/
+資料確認清單/
+scripts/
+README.full.md

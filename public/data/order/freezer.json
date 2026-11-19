@@ -1,0 +1,7 @@
+{
+  "capacity_pallets": 320,
+  "safe_level_ratio": 0.9,
+  "other_used_pallets": 205,
+  "note": "其他占用 = 冷凍原料、半成品等未逐項建模的庫存",
+  "current_used_pallets": 226
+}

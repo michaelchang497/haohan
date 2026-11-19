@@ -1,0 +1,155 @@
+[
+  {
+    "line_id": "LA",
+    "item_id": "FG01",
+    "rate_per_hour": 620,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 2000,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LA",
+    "item_id": "FG02",
+    "rate_per_hour": 620,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 2000,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LA",
+    "item_id": "FG05",
+    "rate_per_hour": 480,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 1500,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LA",
+    "item_id": "FG03",
+    "rate_per_hour": 260,
+    "rate_basis": "每小時",
+    "priority": 2,
+    "min_batch": 800,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LB",
+    "item_id": "FG03",
+    "rate_per_hour": 260,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 800,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LB",
+    "item_id": "FG14",
+    "rate_per_hour": 200,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 600,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LB",
+    "item_id": "FG07",
+    "rate_per_hour": 350,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 600,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LB",
+    "item_id": "FG08",
+    "rate_per_hour": 350,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 600,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LH",
+    "item_id": "FG04",
+    "rate_per_hour": 9,
+    "rate_basis": "每人每小時",
+    "priority": 1,
+    "min_batch": 100,
+    "setup_minutes": 15
+  },
+  {
+    "line_id": "LH",
+    "item_id": "FG06",
+    "rate_per_hour": 6,
+    "rate_basis": "每人每小時",
+    "priority": 1,
+    "min_batch": 100,
+    "setup_minutes": 15
+  },
+  {
+    "line_id": "LH",
+    "item_id": "FG09",
+    "rate_per_hour": 15,
+    "rate_basis": "每人每小時",
+    "priority": 1,
+    "min_batch": 200,
+    "setup_minutes": 15
+  },
+  {
+    "line_id": "LH",
+    "item_id": "FG13",
+    "rate_per_hour": 7,
+    "rate_basis": "每人每小時",
+    "priority": 1,
+    "min_batch": 100,
+    "setup_minutes": 15
+  },
+  {
+    "line_id": "LP",
+    "item_id": "FG10",
+    "rate_per_hour": 250,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 200,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LP",
+    "item_id": "FG11",
+    "rate_per_hour": 300,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 300,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LJ",
+    "item_id": "FG12",
+    "rate_per_hour": 120,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 200,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LY",
+    "item_id": "FG15",
+    "rate_per_hour": 600,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 1000,
+    "setup_minutes": 20
+  },
+  {
+    "line_id": "LY",
+    "item_id": "FG16",
+    "rate_per_hour": 150,
+    "rate_basis": "每小時",
+    "priority": 1,
+    "min_batch": 300,
+    "setup_minutes": 20
+  }
+]

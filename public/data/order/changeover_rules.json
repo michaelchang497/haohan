@@ -1,0 +1,10 @@
+{
+  "default_setup_minutes": 20,
+  "allergen_cleaning_minutes": 45,
+  "allergen_last_in_day": true,
+  "controlled_allergens": [
+    "花生",
+    "芝麻"
+  ],
+  "note": "含管控過敏原（花生、芝麻）的品項排在當天最後；換成其他口味前需清洗 45 分鐘。乳製品等其他過敏原仍需標示，但不限制排序"
+}

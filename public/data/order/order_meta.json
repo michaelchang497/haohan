@@ -1,0 +1,25 @@
+{
+  "source": "模擬資料（mock）— 插單判斷模組",
+  "snapshot_at": "2026-11-18 07:00",
+  "horizon_end": "2027-01-15",
+  "generated_at": "2026-11-18T08:57:19.484Z",
+  "row_counts": {
+    "calendar": 59,
+    "production_lines": 6,
+    "maintenance": 1,
+    "line_capabilities": 17,
+    "changeover_rules": 1,
+    "staff_attendance": 50,
+    "overtime_policy": 1,
+    "freezer": 1,
+    "customer_rules": 19,
+    "planning_rules": 11,
+    "sales_orders": 262,
+    "inventory": 55,
+    "work_orders": 198,
+    "production_schedule": 229,
+    "purchase_orders": 162,
+    "insert_scenarios": 4,
+    "sources": 16
+  }
+}
